@@ -80,7 +80,7 @@ function utmPHP( $with_e = '?' )
 function utmPHP_tagRefresh( $url )
 {
 	if ( utmPHP_filter( 'utm_content' ) == 'ND' ) {
-		return "<meta http-equiv=\"refresh\" content=\"0; url=index.php" . utmPHP_url() . "\">";
+		return "<meta http-equiv=\"refresh\" content=\"0; url=index.php" . utmPHP() . "\">";
 	} else {
 		return "<meta http-equiv=\"refresh\" content=\"0; url=" . $url . "\">";
 	}
