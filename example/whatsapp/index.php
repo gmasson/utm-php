@@ -20,6 +20,7 @@ $url .= " (Protocolo de Atendimento: " . utmPHP_cookie( 'utm_content' ) . ")";
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>Carregando Link</title>
 
@@ -40,8 +41,8 @@ $url .= " (Protocolo de Atendimento: " . utmPHP_cookie( 'utm_content' ) . ")";
 	</script>
 	<!-- End Google Analytics -->
 
-	<!-- Tag (NÃO ALTERE. Aqui será gerada a tag que redireciona para o Whatsapp) -->
-	<?php echo utmPHP_tagRefresh( $url ); ?>
+	<!-- Tag com função 'utmPHP_output' que retorna a URL -->
+	<meta http-equiv="refresh" content="0; url=<?php echo utmPHP_output( $url ); ?>">
 </head>
 <body>
 	<p>Aguarde, carregando...</p>
