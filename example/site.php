@@ -5,13 +5,13 @@
 * Exemplo e instruções de uso
 */
 
-include '../utm-php/core.php';
+include '../utm-php.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exemplo implementado no site</title>
+	<title>Exemplo implementado em site</title>
 	<style type="text/css">
 		body {
 			margin: 0;
@@ -37,6 +37,17 @@ include '../utm-php/core.php';
 			text-decoration: none;
 		}
 	</style>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000000-0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-00000000-0');
+	</script>
+	<!-- End Google Analytics -->
 
 </head>
 <body>
@@ -85,7 +96,7 @@ include '../utm-php/core.php';
 
 	<br>
 
-	<a class="cta" href="whatsapp<?php echo utmPHP() ?>" target="_blank">Chega de texto, vamos ver esse link sendo rastreado e redirecionado para o WhatsApp</a>
+	<a class="cta" href="<?php echo utmPHP_link( 'whatsapp' ) ?>" target="_blank">Chega de texto, vamos ver esse link sendo rastreado e redirecionado para o WhatsApp</a>
 
 	<br>
 

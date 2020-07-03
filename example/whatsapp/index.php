@@ -4,17 +4,17 @@
 * Salva UTMs no Google Analytics e redireciona para o link desejado
 */
 
-include '../../utm-php/core.php';
+include '../../utm-php.php';
 
 # Informações para WhatsApp
-$whatsapp = "5500000000000";
+$whatsapp_numb = "5500000000000";
 $text = "Gostaria de saber mais informações";
 
 # Insira aqui a URL de destino (exemplo: Whatsapp API)
-$url = "https://api.whatsapp.com/send?phone=" . $whatsapp . "&text=" . $text;
+$url = "https://api.whatsapp.com/send?phone=" . $whatsapp_numb . "&text=" . $text;
 
 # Aqui é como será renderizado o envio do ID da lead
-$url .= "%20(Protocolo%20de%20Atendimento: " . utmPHP_cookie( 'utm_content' ) . ")";
+$url .= " (Protocolo de Atendimento: " . utmPHP_cookie( 'utm_content' ) . ")";
 
 ?>
 <!DOCTYPE html>
@@ -23,21 +23,27 @@ $url .= "%20(Protocolo%20de%20Atendimento: " . utmPHP_cookie( 'utm_content' ) . 
 	<meta charset="utf-8">
 	<title>Carregando Link</title>
 
+	<!--
+		ATENÇÃO
+		Você precisa adicionar o código do Google Analytics ou Google Tag Manager
+		neste arquivo, no lugar do código de exemplo a seguir.
+	-->
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $id_ga; ?>"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000000-0"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', '<?php echo $id_ga; ?>');
+		gtag('config', 'UA-00000000-0');
 	</script>
 	<!-- End Google Analytics -->
 
-	<!-- Tag -->
+	<!-- Tag (NÃO ALTERE. Aqui será gerada a tag que redireciona para o Whatsapp) -->
 	<?php echo utmPHP_tagRefresh( $url ); ?>
 </head>
 <body>
-	<p>Carregando...</p>
+	<p>Aguarde, carregando...</p>
 </body>
 </html>
