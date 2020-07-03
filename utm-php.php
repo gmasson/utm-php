@@ -1,7 +1,7 @@
 <?php
 /**
 * UTM PHP
-* V. 1.0
+* V. 1.1.1
 * Projeto open source para rastrear UTMs dentro do site usando Google Analytics
 * License MIT - https://github.com/gmasson/utm-php/blob/master/LICENSE
 */
